@@ -10,5 +10,15 @@ If you only need the LS_COLOR, comment the blocks for PS1, and ignore the fonts 
 If you want to use PS1, copy the content of fonts dir to ~/.fonts and run fc-cache.
 
 
-
 Hope you will like it.
+
+#INSTALL
+1. Put the content of the fonts dir in ~/.fonts
+
+2. Add these lines in your bashrc:
+
+if [ -f /path-to-the-code/bashrc_colors ]; then
+       . /path-to-the-code/bashrc_colors 
+fi
+
+and source bashrc.
