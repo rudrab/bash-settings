@@ -1,0 +1,14 @@
+This is a RGB color specs for LS_COLOR and PS1.
+This is tested at:
+echo $SHELL
+/bin/bash
+echo $TERM
+xterm-256color
+
+The fonts directory is only needed for PS1. 
+If you only need the LS_COLOR, comment the blocks for PS1, and ignore the fonts dir.
+If you want to use PS1, copy the content of fonts dir to ~/.fonts and run fc-cache.
+
+
+
+Hope you will like it.
