@@ -29,6 +29,7 @@ add_ls_colors() {
 }
 add_ls_colors "1;38;2;219;68;55" f90 f F F90 c cpp py vim
 add_ls_colors "1;38;2;210;165;119" tex bib
+add_ls_colors "1;38;2;156;056;049" h 
 add_ls_colors "1;38;2;244;180;00" tar tgz arj taz lzh zip z gz bz2 7z
 add_ls_colors "0;38;2;241;101;41" html xml css php
 add_ls_colors "1;38;5;246" o mod bbl blg aux fdb_latexmk fls log bak dbj m4 
