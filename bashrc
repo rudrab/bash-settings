@@ -5,6 +5,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+#VTE bug for terminix
+if [[ $TERMINIX_ID ]]; then
+        source /etc/profile.d/vte.sh
+fi
+
 if [ -f /home/rudra/Devel/bash-settings/bashrc-colors.sh ]; then
        . /home/rudra/Devel/bash-settings/bashrc-colors.sh
 fi
@@ -20,12 +25,14 @@ alias rm="/bin/rm -i"
 alias grep="grep --colour -iTHn"
 alias vi="gvim"
 alias c="clear"
-alias logout="gnome-session-quit --no-prompt"
+alias logout="gnome-session-quit --logout"
 alias poweroff="gnome-session-quit --power-off"
 alias reboot="gnome-session-quit --reboot"
 alias ping="ping -c 3 google.com"
 alias vsync='rsync --exclude="CHG*" --exclude="WAVECAR" --exclude="PROCAR" --exclude="vasprun.xml"'
 alias pcp='vsync -ave gsissh'
+alias count="shopt -s dotglob nullglob; a=(*);echo ${#a[@]}"
+#alias tar="tar -I pxz"
 #===========================================
 #FIGNORE=$FIGNORE:.hi:.pyc:.o
 
@@ -35,6 +42,10 @@ function showq
   ssh hpc "showq -u phslav"
   echo -e "\033[0m"
 }
+#function cleanlatex
+#{
+  #rm -f !(*.tex|*.png|*.jpg|*.xcf|*.pdf|*.bib)
+#}
 export XBANDPATH=/home/rudra/WORK/xband/
 #======================================
 unset USERNAME
